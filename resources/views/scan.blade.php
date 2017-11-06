@@ -14,7 +14,8 @@
                         </div>
                     @endif
 
-                    Scan Results Will Be HERE!!!!!
+                    Scan Results Will Be HERE!!!!!<br>
+                    <a href="Camera://">Launch Scanner app (iOS only)</a>
                 </div>
             </div>
         </div>
