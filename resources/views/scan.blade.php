@@ -15,8 +15,10 @@
                     @endif
 
                     Scan Results Will Be HERE!!!!!<br>
-                    <div>{{$barcode_id}}</div>
-                    
+                  
+
+                    <div>Status: {{$barcode_status}}</div>
+
                     <a href="Camera://">Launch Scanner app (iOS only)</a>
                 </div>
             </div>

@@ -45,3 +45,14 @@ Route::get('/scanner/{barcode_id}', function ($barcode_id) {
 //    return 'scanner'.$barcode_id;
         return view('scan',['barcode_id'=>$barcode_id]);
 }); 
+
+//Scanning Route with Param (Scanman)
+Route::get('/scanman/{barcode_id}', function ($barcode_id) 
+{
+    $barcode_status_array = DB::select('select status from ticket_barcode where id =' .$barcode_id);
+    $barcode_status = $barcode_status_array[0]->status;
+    return view('scan',['barcode_status'=>$barcode_status]);
+    //return view('scan',['barcode_status'=>$barcode_id]);
+     // var_dump( $barcode_status);
+      }
+); 
