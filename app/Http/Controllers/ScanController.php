@@ -2,27 +2,84 @@
 
 namespace App\Http\Controllers;
 
+use App\Scan;
 use Illuminate\Http\Request;
 
 class ScanController extends Controller
 {
     /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    /**
-     * Show the application dashboard.
+     * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
         return view('scan');
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create(Request $request, $barcode_id)
+    {
+        $url = $request->fullUrl();
+        dd($barcode_id);
+       return view('scan', $barcode_id);
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Scan  $scan
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Scan $scan)
+    {
+   }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Scan  $scan
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Scan $scan)
+    {
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Scan  $scan
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Scan $scan)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Scan  $scan
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Scan $scan)
+    {
+        //
     }
 }

@@ -79,15 +79,13 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Joey's Ticketing
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="/scan">Scan Tickets (Admin Only)</a>
+                    <a href="/purchase">Purchase</a>
+                    <a href="/create_tix">Create Tickets (Admin Only)</a>
                 </div>
             </div>
         </div>

@@ -10,21 +10,29 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//Home Route
 Route::get('/', function () {
     return view('welcome');
 });
-
+//Comes with PHP Make Auth
 Auth::routes();
-
+//Home Route to call the index method
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-
+// Scanning Route
 Route::get('/scan', function () {
     return view('Scan');
 });
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/scan', 'ScanController@index')->name('scan');
+Route::resource('scan', 'ScanController');
+
+
+//Scanning Route with Param
+Route::get('scan/{barcode_id}', [
+    'as' => 'scan.create',
+    'uses' => 'ScanController@create'
+]);
+Route::resource('scan', 'ScanController', ['except' => 'create']);

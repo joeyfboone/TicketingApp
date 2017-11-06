@@ -33,6 +33,6 @@ class UpdateSubscription extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('subscriptions');
     }
 }
