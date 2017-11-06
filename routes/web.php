@@ -38,3 +38,10 @@ Route::get('scan/{barcode_id}', [
     'uses' => 'ScanController@create'
 ]);
 Route::resource('scan', 'ScanController', ['except' => 'create']);
+
+
+//Scanning Route with Param
+Route::get('/scanner/{barcode_id}', function ($barcode_id) {
+//    return 'scanner'.$barcode_id;
+        return view('scan',['barcode_id'=>$barcode_id]);
+}); 
