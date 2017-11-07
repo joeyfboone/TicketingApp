@@ -51,8 +51,27 @@ Route::get('/scanman/{barcode_id}', function ($barcode_id)
 {
     $barcode_status_array = DB::select('select status from ticket_barcode where id =' .$barcode_id);
     $barcode_status = $barcode_status_array[0]->status;
-    return view('scan',['barcode_status'=>$barcode_status]);
-    //return view('scan',['barcode_status'=>$barcode_id]);
-     // var_dump( $barcode_status);
+    $url = config('app.url');
+    if ($barcode_status == 1) {
+        $audio_file = "valid.mp3";
+        return view('scan', compact('audio_file', 'barcode_status', 'url'));
+
+ } else {
+    $audio_file = "invalid.mp3";
+    return view('scan', compact('barcode_status', 'url', 'audio_file'));
       }
+    });
+
+//View Ticket Route with Param 
+Route::get('/view_ticket/{barcode_id}', function ($barcode_id) 
+{
+    $url = config('app.url');
+  $barcode_status_array = DB::select('select status from ticket_barcode where id =' .$barcode_id);
+  $barcode_status = $barcode_status_array[0]->status;
+//    return view('view_ticket',['barcode_status'=>$barcode_status]);
+//    return view('view_ticket',['url'=>$url]);
+   return view('view_ticket', compact('barcode_status', 'url'));
+ var_dump($url);
+
+   }
 ); 
