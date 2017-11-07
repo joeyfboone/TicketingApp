@@ -86,3 +86,6 @@ Route::get('/view_ticket/{barcode_id}', function ($barcode_id)
 
    }
 ); 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
