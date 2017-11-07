@@ -15,8 +15,9 @@
                     @endif
 
                     Scan Results Will Be HERE!!!!! Yep.<br>
-                    <audio src="{{$url}}/audio/{{$audio_file}}" autoplay="autoplay"></audio>
-                    <img src="{{$url}}/images/{{$image_file}}" height = 300px>   
+                    <audio src="/audio/{{$audio_file}}" autoplay="autoplay"></audio>
+                    <img src="/images/{{$image_file}}" height = 300px>   
+
 
                     <?php if ($barcode_status == 1) { ?>
                         <div>Ticket is Valid</div>
