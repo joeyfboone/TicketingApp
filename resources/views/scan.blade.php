@@ -33,6 +33,7 @@
                     <div>Status: {{$barcode_status}}</div>
 
                     <a href="RedLaser://">Launch Scanner app (iOS only)</a>
+                    <a href="QR Reader://">Launch Scanner app (iOS only)</a>
 
                 </div>
             </div>
