@@ -54,11 +54,20 @@ Route::get('/scanman/{barcode_id}', function ($barcode_id)
     $url = config('app.url');
     if ($barcode_status == 1) {
         $audio_file = "valid.mp3";
-        return view('scan', compact('audio_file', 'barcode_status', 'url'));
+        $image_file = "valid.jpg";
+        return view('scan', compact('audio_file', 'barcode_status', 'url', 'image_file'));
+        DB::statement('update ticket_barcode SET status = "0" WHERE id =' .$barcode_id);
+        // DB::table('ticket_barcode')
+        // ->where('id', $barcode_id)
+        // ->update(['status' => '0']);
+        // DB::table('ticket_barcode')
+        // ->where('id', $barcode_id)
+        // ->update(['status' =>DB::raw(0)]);
 
  } else {
     $audio_file = "invalid.mp3";
-    return view('scan', compact('barcode_status', 'url', 'audio_file'));
+    $image_file = "invalid.jpg";
+    return view('scan', compact('barcode_status', 'url', 'audio_file', 'image_file'));
       }
     });
 

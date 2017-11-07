@@ -16,14 +16,18 @@
 
                     Scan Results Will Be HERE!!!!! Yep.<br>
                     <audio src="{{$url}}/audio/{{$audio_file}}" autoplay="autoplay"></audio>
- <audio preload="auto" autobuffer> 
-  <source src="{{$url}}../audio/{{$audio_file}}"/>
+                    <img src="{{$url}}/images/{{$image_file}}" height = 300px>   
 
-  <a href src="{{$url}}../audio/{{$audio_file}}">chime</a> 
+                    <?php if ($barcode_status == 1) { ?>
+                        <div>Ticket is Valid</div>
+                    <?php } elseif ($barcode_status == 0) { ?>
+                        <div>Ticket is Invalid</div>
+                    <?php } 
+                    else { ?>
+                        <div>Verify this is a ticket</div>
+                    <?php }?>
 
-      </audio>
-    
-      <a href="../audio/{{$audio_file}}">chime</a>
+
 
                     <div>Status: {{$barcode_status}}</div>
 
