@@ -14,13 +14,16 @@
                         </div>
                     @endif
 
-                    Scan Results Will Be HERE!!!!!<br>
+                    Here is your ticket. Please present at the entrance.<br>
                   
-                    <img src='https://chart.googleapis.com/chart?cht=qr&chl={{$url}}%2Fview_ticket%2F{{$barcode_status}}&chs=180x180&choe=UTF-8&chld=L|2' alt=''>
+                    <img src='https://chart.googleapis.com/chart?cht=qr&chl={{$url}}%2Fscanman%2F{{$barcode_status}}&chs=180x180&choe=UTF-8&chld=L|2' alt=''>
                     <div>Status: {{$barcode_status}}</div>
                     <div>URL: {{$url}}</div>
+              
 
-                    <a href="Camera://">Launch Scanner app (iOS only)</a>
+
+
+
                 </div>
             </div>
         </div>
