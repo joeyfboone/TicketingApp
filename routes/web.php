@@ -56,13 +56,15 @@ Route::get('/scanman/{barcode_id}', function ($barcode_id)
         $audio_file = "valid.mp3";
         $image_file = "valid.jpg";
         return view('scan', compact('audio_file', 'barcode_status', 'url', 'image_file'));
-        DB::statement('update ticket_barcode SET status = "0" WHERE id =' .$barcode_id);
-        // DB::table('ticket_barcode')
-        // ->where('id', $barcode_id)
-        // ->update(['status' => '0']);
-        // DB::table('ticket_barcode')
-        // ->where('id', $barcode_id)
-        // ->update(['status' =>DB::raw(0)]);
+       // DB::update('update ticket_barcode SET status = "0" WHERE id =' .$barcode_id);
+       DB::insert('insert into scans (id, status) values (?, ?)', [$barcode_id, 1]);
+       DB::update('update ticket_barcodes set status = 0 where id = ?', [$barcode_id]);
+      
+       
+    //    DB::table('ticket_barcode')
+    //     ->where('id', $barcode_id)
+    //     ->update(array('status' => '0'));
+
 
  } else {
     $audio_file = "invalid.mp3";
