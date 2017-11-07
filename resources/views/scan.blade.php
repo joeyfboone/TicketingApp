@@ -16,7 +16,7 @@
 
                     Scan Results Will Be HERE!!!!! Yep.<br>
                     <audio src="/audio/{{$audio_file}}" autoplay="autoplay"></audio>
-                    <img src="/images/{{$image_file}}" height = 300px>   
+                    <img src="/images/{{$image_file}}" height = 250px>   
 
 
                     <?php if ($barcode_status == 1) { ?>
