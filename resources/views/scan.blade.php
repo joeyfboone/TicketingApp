@@ -15,9 +15,8 @@
                     @endif
 
                     Scan Results:<br>
-                    <audio src="/audio/{{$audio_file}}" autoplay="autoplay"></audio>
+                    <audio src="/audio/{{$audio_file}}" type="audio/mpeg" autoplay="autoplay"></audio>
                     <img src="/images/{{$image_file}}" height = 250px>   
-
 
                     <?php if ($barcode_status == 1) { ?>
                         <div>Ticket is Valid</div>
