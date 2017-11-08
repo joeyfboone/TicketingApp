@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    Scan Results Will Be HERE!!!!! Yep.<br>
+                    Scan Results:<br>
                     <audio src="/audio/{{$audio_file}}" autoplay="autoplay"></audio>
                     <img src="/images/{{$image_file}}" height = 250px>   
 
@@ -33,8 +33,6 @@
                     <div>Status: {{$barcode_status}}</div>
 
                     <a href="RedLaser://">Launch Scanner app (iOS only)</a><br>
-                    <a href="QRReader://">Launch Scanner app (iOS only)</a><br>
-                    <a href="QR_Reader://">Launch Scanner app (iOS only)</a><br>
 
                 </div>
             </div>
