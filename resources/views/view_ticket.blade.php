@@ -16,7 +16,7 @@
 
                     Here is your ticket. Please present at the entrance.<br>
                   
-                    <img src='https://chart.googleapis.com/chart?cht=qr&chl=http://still-taiga-30289.herokuapp.com%2Fscanman%2F{{$barcode_status}}&chs=180x180&choe=UTF-8&chld=L|2' alt=''>
+                    <img src='https://chart.googleapis.com/chart?cht=qr&chl=http://still-taiga-30289.herokuapp.com%2Fscan%2F{{$barcode_id}}&chs=180x180&choe=UTF-8&chld=L|2' alt=''>
                     <div>Status: {{$barcode_status}}</div>
                     <div>URL: {{$url}}</div>
               
