@@ -55,9 +55,10 @@ class ScanController extends Controller
         if ($barcode_status == 1) {
             $audio_file = "valid.mp3";
             $image_file = "valid.jpg";
-            return view('scan', compact('audio_file', 'barcode_status', 'url', 'image_file'));
             DB::update('update ticket_barcode SET status = "0" WHERE id =' .$barcode_id);
-           DB::insert('insert into scans (id, status) values (?, ?)', [$barcode_id, 1]);
+            DB::insert('insert into scans (barcode_id, status) values (?, ?)', [$barcode_id, 1]);
+            return view('scan', compact('audio_file', 'barcode_status', 'url', 'image_file'));
+
          //  DB::update('update ticket_barcodes set status = 0 where id = ?', [$barcode_id]);
           
            
@@ -71,7 +72,21 @@ class ScanController extends Controller
      } else {
         $audio_file = "invalid.mp3";
         $image_file = "invalid.jpg";
-        return view('scan', compact('barcode_status', 'url', 'audio_file', 'image_file'));
+        $scans_array = DB::select('select status, created_at from scans where barcode_id =' .$barcode_id);
+        // for ($i = 0; $i <= count($scans_array); $i++) {
+        //     var_dump($i);
+        //     $scans_status = $scans_array[$i]->status[$i];
+        //     $scans_created_at =$scans_array[$i]->created_at[$i];
+        //     var_dump($scans_status);
+        //     var_dump($scans_created_at);
+        // } 
+        // $scans_status = $scans_array[i]->status;
+        // $scans_created_at =$scans_array[i]->created_at;
+        // var_dump($scans_status);
+        // var_dump($scans_created_at);
+
+        DB::insert('insert into scans (barcode_id, status) values (?, ?)', [$barcode_id, 0]);
+        return view('scan', compact('barcode_status', 'url', 'audio_file', 'image_file', 'scans_array'));
           }
         }
 

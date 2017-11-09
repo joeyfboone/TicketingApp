@@ -22,7 +22,28 @@
                         <div>Ticket is Valid</div>
                     <?php } elseif ($barcode_status == 0) { ?>
                         <div>Ticket is Invalid</div>
+
+                        <table>
+  <tr>
+    <th>Status</th>
+    <th>Scan Date & Time</th> 
+  </tr>
+ 
+                        @foreach ($scans_array as $scan )
+
+                        <tr>
+                        <td>
+                        
+                        {{ $scan -> status }}</td>  <td>{{ $scan -> created_at }} </td>
+                         </tr>
+                            @endforeach
+</table>
+
                     <?php } 
+
+
+
+
                     else { ?>
                         <div>Verify this is a ticket</div>
                     <?php }?>
