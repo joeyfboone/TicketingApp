@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use DB;
-use App\Purchase;
+use App\Quantity;
 use Illuminate\Http\Request;
 
-class PurchaseController extends Controller
+class QuantityController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class PurchaseController extends Controller
      */
     public function index()
     {
-        return view('purchase');
+        return view('quantity');
     }
 
     /**
@@ -45,11 +45,11 @@ class PurchaseController extends Controller
      * @param  \App\Scan  $scan
      * @return \Illuminate\Http\Response
      */
-    public function show($category_id)
+    public function show($ticket_id)
     {
-        $active_tickets_array = DB::select( 'select id, name, description, image_name from tickets where status = 1 and category_id =' .$category_id);
+        $selected_ticket = DB::select('select id, name, description, image_name from tickets where id = ' .$ticket_id);
 
-         return view('purchase', compact('active_tickets_array'));
+         return view('quantity', compact('selected_ticket'));
 
                }
 

@@ -81,11 +81,11 @@
                 <div class="title m-b-md">
                     Joey's Ticketing
                 </div>
-
+                    Demo Links
                 <div class="links">
-                    <a href="/scan">Scan Tickets (Admin Only)</a>
-                    <a href="/purchase">Purchase</a>
-                    <a href="/create_tix">Create Tickets (Admin Only)</a>
+                    <a href="/scan/1">Scan Tickets</a>
+                    <a href="/purchase/1">Purchase</a>
+                    <a href="/view_ticket/1">View Tickets</a>
                 </div>
             </div>
         </div>

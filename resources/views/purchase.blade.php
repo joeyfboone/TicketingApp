@@ -30,7 +30,10 @@ Tickets
                         
                         {{ $active_tickets -> name }}</td>  <td>{{ $active_tickets -> description }} </td>
                        
-                        <td><button value = {{$active_tickets -> id}}>Select Ticket</button></td>
+                        <td>                               
+                        <button>
+                                        <a href="/purchase/ticket_quantity/{{$active_tickets -> id}}">Select Ticket </a>
+                                    </button></td>
                          </tr>
                             @endforeach
 </table>

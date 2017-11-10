@@ -29,6 +29,9 @@ Route::get('/scan/{barcode_id}', 'ScanController@show')->name('scan.show');
 //Purchase Route to call the index method with cat_id
 Route::get('/purchase/{category_id}', 'PurchaseController@show')->name('purchase.show');
 
+//Quantity Route to call the index method with cat_id
+Route::get('/purchase/ticket_quantity/{ticket_id}', 'QuantityController@show')->name('quantity.show');
+
 //Purchase Route to call the index method
 Route::get('/purchase/', 'PurchaseController@index')->name('purchase');
 
