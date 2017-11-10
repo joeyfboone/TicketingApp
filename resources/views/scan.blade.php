@@ -23,7 +23,7 @@
                     <?php } elseif ($barcode_status == 0) { ?>
                         <div>Ticket is Invalid</div>
 
-                        <table>
+                        <table class="table table-striped">
   <tr>
     <th>Status</th>
     <th>Scan Date & Time</th> 

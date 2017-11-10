@@ -48,7 +48,7 @@ class PurchaseController extends Controller
     public function show($category_id)
     {
         $active_tickets_array = DB::select('select id, name, description, image_name from tickets where status = 1 and category_id =' .$category_id);
-var_dump($active_tickets_array);
+
          return view('purchase', compact('active_tickets_array'));
 
                }
